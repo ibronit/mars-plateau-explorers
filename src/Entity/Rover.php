@@ -13,6 +13,10 @@ class Rover
     const DIRECTION_EAST = 'E';
     const DIRECTION_SOUTH = 'S';
 
+    const COMMAND_TURN_LEFT = 'L';
+    const COMMAND_TURN_RIGHT = 'R';
+    const COMMAND_MOVE_FORWARD = 'M';
+
     private int $xCoordinate;
 
     private int $yCoordinate;
@@ -105,5 +109,13 @@ class Rover
     public static function getDirections(): array
     {
         return [self::DIRECTION_WEST, self::DIRECTION_NORTH, self::DIRECTION_EAST, self::DIRECTION_SOUTH];
+    }
+
+    /**
+     * @return array
+     */
+    public static function getCommands(): array
+    {
+        return [self::COMMAND_MOVE_FORWARD, self::COMMAND_TURN_LEFT, self::COMMAND_TURN_RIGHT];
     }
 }

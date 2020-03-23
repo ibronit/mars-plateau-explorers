@@ -19,10 +19,10 @@ class Plateau
      * @param int $height
      * @param int $width
      */
-    public function __construct(int $height, int $width)
+    public function __construct(int $width, int $height)
     {
-        $this->height = $height;
         $this->width = $width;
+        $this->height = $height;
     }
 
     /**

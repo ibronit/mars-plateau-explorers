@@ -6,11 +6,6 @@ use App\Entity\Rover;
 
 class RoverManager
 {
-    private const TURN_LEFT = 'L';
-    private const TURN_RIGHT = 'R';
-
-    private const MOVE_FORWARD = 'M';
-
     private PlateauManager $plateauManager;
 
     public function __construct(PlateauManager $plateauManager)
@@ -25,13 +20,13 @@ class RoverManager
     public function moveByCommand(Rover $rover, string $command): void
     {
         switch ($command) {
-            case self::TURN_LEFT:
+            case Rover::COMMAND_TURN_LEFT:
                 $this->turnLeft($rover);
                 break;
-            case self::TURN_RIGHT:
+            case Rover::COMMAND_TURN_RIGHT:
                 $this->turnRight($rover);
                 break;
-            case self::MOVE_FORWARD:
+            case Rover::COMMAND_MOVE_FORWARD:
                 $this->moveForward($rover);
                 break;
         }
